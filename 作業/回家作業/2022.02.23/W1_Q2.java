@@ -1,0 +1,35 @@
+
+/**
+ * 題目:Q2: 將使用者輸入的正整進行質因數分解
+ * 班級:資管二B
+ * 姓名:許哲睿
+ * 學號:410928050
+ * 日期:2022.02.23
+ */
+
+import java.util.*;
+
+public class W1_Q2 {
+    
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i = 2;
+
+        System.out.print(n+"=");
+        
+        while (n > 1) {
+            while (n % i == 0) {
+                n = n / i;
+                System.out.printf("%d", i);
+                if (n != 1) {
+                System.out.printf("*");
+                }
+            }
+            i++;
+        }
+    }
+}
+    
+
