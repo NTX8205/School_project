@@ -22,27 +22,35 @@ public class W1_Q3 {
         int y=sc.nextInt();
 
         int gcd_x=x,gcd_y=y;
-        int lcd_x=x,lcd_y=y;
         int gcd=1,lcd=1;
 
-        for(int gcd_i=2 ; gcd_x%gcd_i==0 && gcd_y%gcd_i==0;gcd_i++){
-            gcd_x/=gcd_i;
-            gcd_y/=gcd_i;
-            gcd*=gcd_i;
+        for(int gcd_i=2 ; gcd_x>1 && gcd_y>1;gcd_i++){
+            while(gcd_x % gcd_i == 0 && gcd_y % gcd_i == 0){
+                gcd_x/=gcd_i;
+                gcd_y/=gcd_i;
+                gcd*=gcd_i;
+            }
+            if(isPrime(gcd_x) == true && isPrime(gcd_y) == true){
+                break;
+            }
+            
         }
-        
+        lcd=gcd*gcd_x*gcd_y;
+
         System.out.println(x+"和"+y+"的最大公因數:"+gcd);
-        
-        for(int lcd_i=2;lcd_x%lcd_i==0 && lcd_y%lcd_i==0;lcd_i++){
-            lcd_x/=lcd_i;
-            lcd_y/=lcd_i;
-            lcd*=lcd_i;
-        }
-
-
-        lcd=lcd*lcd_x*lcd_y;
-
         System.out.println(x + "和" + y + "的最小公倍數:" + lcd);
 
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
