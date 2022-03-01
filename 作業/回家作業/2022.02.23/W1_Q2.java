@@ -13,6 +13,10 @@ public class W1_Q2 {
     
     public static void main(String[] args) {
 
+        System.out.println("正整數進行質因數分解");
+
+        System.out.print("輸入整數:");
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int i = 2;

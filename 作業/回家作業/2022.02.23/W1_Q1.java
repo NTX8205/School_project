@@ -13,9 +13,13 @@ public class W1_Q1 {
     
 
     public static void main(String[] args) {
+
+        System.out.println("判斷正整數是否為質數");
         
         Scanner sc =new Scanner(System.in);
 
+
+        System.out.print("輸入整數:");
         int n = sc.nextInt();
         int count=0;
 
