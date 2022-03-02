@@ -19,11 +19,11 @@ public class W1_Q2 {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int i = 2;
+        
 
         System.out.print(n+"=");
         
-        while (n > 1) {
+        for (int i = 2;n > 1;i++) {
             while (n % i == 0) {
                 n = n / i;
                 System.out.printf("%d", i);
@@ -31,7 +31,6 @@ public class W1_Q2 {
                 System.out.printf("*");
                 }
             }
-            i++;
         }
     }
 }
