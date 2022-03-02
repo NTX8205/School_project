@@ -18,10 +18,10 @@ public class W2_Q1{
         int count_prime=0;
 
         if(start>end){
-           int temp;
-           temp=start;
-           start=end;
-           end=temp;
+            int temp;
+            temp=start;
+            start=end;
+            end=temp;
         }
 
         s.close();
@@ -38,7 +38,8 @@ public class W2_Q1{
         }
 
         System.out.println("\n質數個數:"+count_prime);
-    }  
+    }
+    
     public static boolean isPrime(int n) {  
         if (n <= 1) {  
             return false;  
@@ -48,7 +49,6 @@ public class W2_Q1{
                 return false;  
             }  
         }  
-        return true;   
- 
+        return true;
     }
 }
