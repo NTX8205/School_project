@@ -1,7 +1,4 @@
-
-
 import java.util.Scanner;
-
 /**
  * 題目:Q3: 質因數分解進階版
  * 班級:資管二B
