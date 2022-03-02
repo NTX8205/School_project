@@ -1,3 +1,5 @@
+package 作業.回家作業.W2;
+
 import java.util.Scanner;
 /**
  * 題目:Q3: 質因數分解進階版
