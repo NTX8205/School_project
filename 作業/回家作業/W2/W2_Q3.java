@@ -12,10 +12,12 @@ import java.util.Scanner;
 public class W2_Q3 {
     public static void main(String[] args) {
         
-
+        System.out.println("質因數分解進階版");
         Scanner sc = new Scanner(System.in);
-
+        System.out.print("輸入一整數:");
         int n = sc.nextInt();
+        sc.close();
+
         System.out.print(n+"=");
         for(int i=2;n>1;i++){
             int count=0;
@@ -24,8 +26,16 @@ public class W2_Q3 {
                 count++;
 
             }
-            System.out.println(i+"^"+count);
-            if(n!=1){
+            if(count!=0){
+                if(count==1){
+                    System.out.print(i);
+                }
+                else{
+                    System.out.print(i + "^" + count);
+                }
+            }
+            
+            if(n!=1 && count!=0){
                 System.out.print("*");
             }
         }
