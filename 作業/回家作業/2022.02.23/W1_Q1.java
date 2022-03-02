@@ -22,6 +22,7 @@ public class W1_Q1 {
         System.out.print("輸入整數:");
         int n = sc.nextInt();
         int count=0;
+        sc.close();
 
         System.out.print("可被"+n+"的因數有: ");
 

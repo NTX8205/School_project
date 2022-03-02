@@ -1,5 +1,4 @@
-package 範例;
-import java.io.*;
+package 作業.範例;
 
 public class ch1_2b_time {
     static int NUM = 5;

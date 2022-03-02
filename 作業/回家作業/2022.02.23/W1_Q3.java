@@ -20,6 +20,7 @@ public class W1_Q3 {
         System.out.print("輸入2數:");
         int x=sc.nextInt();
         int y=sc.nextInt();
+        sc.close();
 
         int gcd_x=x,gcd_y=y;
         int gcd=1,lcd=1;

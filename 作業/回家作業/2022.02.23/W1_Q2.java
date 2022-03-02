@@ -19,7 +19,7 @@ public class W1_Q2 {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        
+        sc.close();
 
         System.out.print(n+"=");
         
