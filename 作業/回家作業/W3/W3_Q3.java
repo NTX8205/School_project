@@ -65,9 +65,9 @@ public class W3_Q3 {
         int lcm = 1;
 
         // 檢測用
-        // System.out.println(num_a);
-        // System.out.println(num_b);
-        // System.out.println(num_c);
+        System.out.println(num_a);
+        System.out.println(num_b);
+        System.out.println(num_c);
 
         int gcd_size = Math.min(Math.min(num_a.size(), num_b.size()),num_c.size());
 
@@ -144,11 +144,43 @@ public class W3_Q3 {
         }
 
         // 檢測用
-        // System.out.println(num_a);
-        // System.out.println(num_b);
-        // System.out.println(num_c);
+        System.out.println(num_a);
+        System.out.println(num_b);
+        System.out.println(num_c);
 
         System.out.println(s + "的最大公因數為" + gcd);
         System.out.println(s + "的最小公倍數為" + lcm);
     }
+
+    public static int findDivisor(int n,ArrayList<Integer> divisor){
+        for (int i = 2; n != 1; i++) {
+            int count = 0;
+            divisor.add(i);
+            while (n % i == 0) {
+                count++;
+                n /= i;
+            }
+            divisor.add(count);
+        }
+        return n;
+    }
+}
+
+
+
+class number{
+
+    int num;
+
+    ArrayList<Integer> divisor = new ArrayList<Integer>();
+
+    public number(int n ,  ArrayList<Integer> divisor){
+        this.num = n;
+        this.divisor=divisor;
+    }
+
+    public static void findDivisor(){
+
+    }
+
 }

@@ -11,7 +11,7 @@ package 作業.回家作業.W1;
 
 import java.util.Scanner;
 
-public class W1_Q1 {
+public class W1_Q1N{
     
 
     public static void main(String[] args) {
