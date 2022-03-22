@@ -31,5 +31,6 @@ public class Main{
                 test.remove(0);
             }
         }
+        System.out.println();
     }
 }
