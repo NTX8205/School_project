@@ -1,11 +1,29 @@
-<mxfile host="app.diagrams.net" modified="2022-03-24T14:14:50.438Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" etag="-sqsYbrT3YsZB043F2YM" version="17.1.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-03-24T14:49:07.210Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" etag="Mq-tqGjZ5HM9jppUt7q8" version="17.1.3" type="github" pages="3">
   <diagram id="_pG80g4cawoxqxB1wlAf" name="ER model">
-    <mxGraphModel dx="1422" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2249" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="4w4S4VqDiedFlnZ-BZjI-1" value="學生" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="70" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-3" value="課堂" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="380" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-4" value="教授" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="670" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-5" value="學號" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-6" value="信箱" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-7" value="電話" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="340" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4w4S4VqDiedFlnZ-BZjI-8" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="450" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
