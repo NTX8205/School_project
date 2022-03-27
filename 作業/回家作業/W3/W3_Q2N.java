@@ -11,7 +11,7 @@ package 作業.回家作業.W3;
 
 import java.util.*;
 
-public class W3_Q2 {
+public class W3_Q2N {
     
     public static void main(String[] args) {
         
