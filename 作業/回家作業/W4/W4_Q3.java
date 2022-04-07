@@ -16,22 +16,22 @@ public class W4_Q3 {
 
         String s = sc.next();
         ArrayList<String> str = new ArrayList<String>();
-        ArrayList<Integer> positon = new ArrayList<Integer>();
+        ArrayList<Integer> position = new ArrayList<Integer>();
 
         for(int i =0;i<s.length();i++){
             char c = s.charAt(i);
             if(c==40){
                 str.add("(");
-                positon.add(i);
+                position.add(i);
             }
             else if(c==41){
                 str.add(")");
-                positon.add(i);
+                position.add(i);
             }
         }
 
         System.out.println(str);
-        System.out.println(positon);
+        System.out.println(position);
 
     }
 }
