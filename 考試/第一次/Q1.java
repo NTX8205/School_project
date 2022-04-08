@@ -1,3 +1,5 @@
+package 考試.第一次;
+
 // Q1：九九乘法表(使用三種不同迴圈)
 // 班級:資管二B
 // 學號:41098050
@@ -9,24 +11,10 @@ public class Q1
 {
     public static void main(String[] args) 
     {
-        System.out.println("九九乘法表 (使用三種不同迴圈)");
-        System.out.println();
-        System.out.println("使用for迴圈");
-        System.out.println();
-        showTop();
+        System.out.println("九九乘法表 (使用三種不同迴圈)\n");
         forLoop();
-        System.out.println();
-        System.out.println("使用do_while迴圈");
-        System.out.println();
-        showTop();
         do_while();
-        System.out.println();
-        System.out.println("使用while迴圈");
-        System.out.println();
-        showTop();
         whileLoop();
-        System.out.println();
-
     }
 
     public static void showTop()
@@ -41,6 +29,9 @@ public class Q1
 
     public static void forLoop() 
     {
+        System.out.println("使用for迴圈\n");
+        showTop();
+        
         for(int i =1; i<=9;i++){
 
             System.out.print(i+" | ");
@@ -51,10 +42,13 @@ public class Q1
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public static void do_while() 
     {
+        System.out.println("使用do_while迴圈\n");
+        showTop();
         int n =1;
         do
         {
@@ -72,10 +66,13 @@ public class Q1
 
         }
         while(n<=9);
+        System.out.println();
     }
 
     public static void whileLoop() 
     {
+        System.out.println("使用while迴圈\n");
+        showTop();
         int k=1;
         while(k<=9)
         {
@@ -90,5 +87,6 @@ public class Q1
             System.out.println();
             k++;
         }
+        System.out.println();
     }
 }
