@@ -24,6 +24,7 @@ public class W4_Q2 {
         for (int i =0 ;i<n;i++) {
             num[i]=sc.nextInt();
         }
+
         int[] front = new int[n];
         int[] back = new int[n];
         for(int i =0 ; i<num.length;i++){
@@ -36,8 +37,10 @@ public class W4_Q2 {
             }
             
         }
+        
         Arrays.sort(front);
         Arrays.sort(back);
+
         int count = 0;
         for(int j =0 ; j<num.length;j++){
             for(int k =0 ;k<num.length;k++){
