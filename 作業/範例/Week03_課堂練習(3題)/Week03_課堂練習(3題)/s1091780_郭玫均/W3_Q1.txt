@@ -1,0 +1,64 @@
+/*
+ 班級：資管二B 學號：410917805 姓名：郭玫均
+ 題目：W3_Q1排序次序
+ */
+
+import java.util.*;
+
+public class W3_Q1 
+{
+ public static void main(String[] args) 
+ {
+  Scanner sc = new Scanner(System.in);   //把數值輸入進array裡
+  System.out.println("請輸入小於10的數：");
+  int n = sc.nextInt();
+  int arr[] = new int[n];
+  
+  if(n>=10)
+  {
+   System.out.println("錯誤！請輸入小於10的數！");
+  }
+  else
+  { 
+   System.out.print("陣列一arr： ");    //隨機數字進arr
+   for (int i=0; i<n; i++)
+   {
+    arr[i]= (int)(Math.random()*100);
+    System.out.print(arr[i]+" ");
+   }
+   
+   //先複製到ans，再排序ans
+   System.out.println();
+   System.out.print("陣列二ans： ");
+   
+   int ans[] = Arrays.copyOf(arr, n);
+   Arrays.sort(ans);
+   for (int i=0; i<n; i++)
+   {
+    System.out.print(ans[i]+" ");
+   }
+   
+   //排序後的ans和arr對比
+   for (int i=0; i<n;i++)
+   {
+    for (int j=0; j<n; j++)
+    {
+     if (ans[j]==arr[i])
+     {
+      arr[i] = j+1;  //array從0開始，題目從1開始
+     }
+    }
+   }
+   
+   System.out.println();
+   System.out.print("答案： ");
+
+   //輸出arr
+   for (int i=0; i<n; i++)
+   {
+    System.out.print(arr[i]+" ");
+   }
+ 
+  }   
+ }
+}

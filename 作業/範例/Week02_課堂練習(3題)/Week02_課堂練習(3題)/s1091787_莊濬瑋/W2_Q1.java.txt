@@ -1,0 +1,38 @@
+// 410917871 資管2A 莊濬瑋
+// 區間質數問題
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int sum = 0;
+        
+        
+        if(a>b){
+            int temp;
+            temp = a;
+            a = b ;
+            b = temp;
+        }
+
+        for(int i = a ; i<=b ; i++){ 
+            if(i == 1)
+                i++;
+            int count = 0;
+            for(int j = 2 ; j < i ;j++){ 
+                if(i % j == 0){
+                    count++;
+                }
+            }
+            if(count == 0) {
+                System.out.print(i+ " ");
+                sum++;
+            }
+        }
+        System.out.println();
+        System.out.print("質數個數:"+sum);
+
+    }
+
+}

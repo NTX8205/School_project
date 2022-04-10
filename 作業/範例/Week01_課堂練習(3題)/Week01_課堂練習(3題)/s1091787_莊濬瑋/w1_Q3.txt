@@ -1,0 +1,30 @@
+
+//410917871 莊濬瑋 資管2A
+//Q3計算兩個正整數的最大公因數&最小公倍數
+
+
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	 	Scanner sc = new Scanner(System.in);
+	 	int a=sc.nextInt();
+	 	int b=sc.nextInt();
+	  	
+        for(int j=b;j<=10000;j++) {
+	  		if(j%a==0 &&j%b==0) {
+	  			System.out.print(j);
+  			break;
+	  		}
+		}
+        for(int i=a;i>=0;i--){
+	  		if(a%i==0 && b%i==0) {
+	  			System.out.println(i);
+	  			break;
+	  		}
+	  	}
+	  	
+	  	
+	}
+   }
