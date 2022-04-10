@@ -22,6 +22,8 @@ public class W4_Q1 {
         System.out.println("三號出局");
         System.out.print("輸入人數: ");
         int n = sc.nextInt();
+        sc.close();
+        
         if(n>=5){
 
             for(int i = 0;i<n ; i++){

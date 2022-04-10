@@ -24,6 +24,9 @@ public class W3_Q2N {
         System.out.print("輸入兩個整數:");
         int a=sc.nextInt();
         int b=sc.nextInt();
+
+        sc.close();
+
         String s = a+"與"+b;
 
         for(int i = 2; a!=1 ;i++){

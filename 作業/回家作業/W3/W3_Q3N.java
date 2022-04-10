@@ -29,6 +29,8 @@ public class W3_Q3N {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
+        sc.close();
+        
         String s = a + "," + b + "與" + c;
 
         for (int i = 2; a != 1; i++) {

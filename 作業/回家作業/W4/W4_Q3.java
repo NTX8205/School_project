@@ -15,6 +15,7 @@ public class W4_Q3 {
         Scanner sc= new Scanner(System.in);
 
         String s = sc.next();
+        sc.close();
         ArrayList<String> str = new ArrayList<String>();
         ArrayList<Integer> position = new ArrayList<Integer>();
 

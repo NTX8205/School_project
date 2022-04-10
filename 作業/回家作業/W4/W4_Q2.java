@@ -17,6 +17,7 @@ public class W4_Q2 {
         System.out.println("前段和與後段和");
         System.out.print("輸入項數:");
         int n = sc.nextInt();
+        sc.close();
         int [] num = new int[n];
 
         System.out.println("輸入"+n+"個數");
