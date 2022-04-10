@@ -12,8 +12,10 @@ import java.util.*;
 public class W4_Q3 {
     
     public static void main(String[] args) {
+        System.out.println("圓括號對應Parenthesis Matching");
         Scanner sc= new Scanner(System.in);
 
+        System.out.print("輸入算式: ");
         String s = sc.next();
         sc.close();
         ArrayList<String> str = new ArrayList<String>();
@@ -21,18 +23,44 @@ public class W4_Q3 {
 
         for(int i =0;i<s.length();i++){
             char c = s.charAt(i);
-            if(c==40){
+            if(c=='('){
                 str.add("(");
                 position.add(i);
             }
-            else if(c==41){
+            else if(c==')'){
                 str.add(")");
                 position.add(i);
             }
         }
+        
+        int start=0,end=0;
+        int sp=0;
+        while(str.size()>1){
+            for (int i = 0; i < str.size(); i++) {
 
-        System.out.println(str);
-        System.out.println(position);
+                if (str.get(i) == "(") {
 
+                    start = position.get(i);
+                    sp = i;
+                } else if (str.get(i) == ")") {
+                    end = position.get(i);
+
+                    str.remove(i);
+                    str.remove(sp);
+                    position.remove(i);
+                    position.remove(sp);
+
+                    System.out.println(start + "," + end);
+                    break;
+                }
+            }
+        }
+
+        if(str.get(0)=="("){
+            System.out.println(position.get(0)+","+"-1");
+        }
+        else if(str.get(0)==")"){
+            System.out.println("-1" + "," + position.get(0));
+        }
     }
 }
