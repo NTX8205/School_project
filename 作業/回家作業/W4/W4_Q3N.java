@@ -9,7 +9,7 @@ package 作業.回家作業.W4;
  */
 
 import java.util.*;
-public class W4_Q3 {
+public class W4_Q3N {
     
     public static void main(String[] args) {
         System.out.println("圓括號對應Parenthesis Matching");
