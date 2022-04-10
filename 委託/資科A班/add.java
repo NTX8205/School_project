@@ -1,4 +1,4 @@
-package 資科A班;
+package 委託.資科A班;
 
 import java.util.Scanner;
 

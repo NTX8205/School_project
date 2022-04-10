@@ -1,4 +1,4 @@
-package 資科B班;
+package 委託.資科B班;
 /*
 5.	寫一個JAVA程式，模擬井字（OX）遊戲。
 

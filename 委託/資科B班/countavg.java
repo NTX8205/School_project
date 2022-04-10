@@ -1,4 +1,4 @@
-package 資科B班;
+package 委託.資科B班;
 /*
 
 2.	寫一個JAVA程式，假設某班級有五位同學A、B、C、D與E，其JAVA成績如下所示： 
