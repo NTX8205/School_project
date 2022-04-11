@@ -1,4 +1,4 @@
-package 作業.範例;
+package 作業.範例.ch1;
 
 public class ch1_2a {
     public static void main(String[] args) {
