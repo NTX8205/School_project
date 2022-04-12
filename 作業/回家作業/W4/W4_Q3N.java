@@ -55,12 +55,14 @@ public class W4_Q3N {
                 }
             }
         }
-
-        if(str.get(0)=="("){
-            System.out.println(position.get(0)+","+"-1");
+        
+        if(str.size()==1){
+            if (str.get(0) == "(") {
+                System.out.println(position.get(0) + "," + "-1");
+            } else if (str.get(0) == ")") {
+                System.out.println("-1" + "," + position.get(0));
+            }
         }
-        else if(str.get(0)==")"){
-            System.out.println("-1" + "," + position.get(0));
-        }
+        
     }
 }
