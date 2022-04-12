@@ -1,6 +1,8 @@
 package 作業.範例.排序法;
 
-public class bubble_sort {
+//氣泡排序法
+
+public class bubble_sort extends Object{
     
 
     public static void main(String[] args) {
