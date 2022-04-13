@@ -29,7 +29,7 @@ public class selection_sort extends Object{
                 }
             }
             System.out.print("第" + (i + 1) + "次排序結果:");
-            for (int k = 0; k < 5; k++) {
+            for (int k = 0; k < 6; k++) {
                 System.out.print(data[k] + " ");
             }
             System.out.println();
