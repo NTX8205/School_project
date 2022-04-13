@@ -1,11 +1,12 @@
 package 作業.範例.排序法;
 
 import java.io.*;
+import java.security.*;
 
 public class insert_sort extends Object{
     
-    int data[]=new int[6];
-    int size=6;
+    int data[]=new int[100000];
+    int size=100000;
     public static void main(String[] args) {
         
         insert_sort sort = new insert_sort();
@@ -17,15 +18,7 @@ public class insert_sort extends Object{
 
     void inputarr(){
         for (int i=0;i<size;i++){
-
-            try {
-                System.out.print("請輸入第"+(i+1)+"個數元素:");
-                InputStreamReader isr = new InputStreamReader(System.in);
-                BufferedReader br = new BufferedReader(isr);
-                data[i]=Integer.parseInt(br.readLine());
-            } catch (Exception e) {
-                //TODO: handle exception
-            }
+            data[i]=(int)(Math.random()*100)+1;
         }
     }
 
@@ -39,17 +32,22 @@ public class insert_sort extends Object{
 
     void insert(){
 
-        for(int i=0;i<size;i++){
+        int i;
+        int j;
+        int temp;
+        for(i=1;i<size;i++){
 
-            int temp=data[i];
-            int j = i-1;
+            temp=data[i];
+            j = i-1;
             while (j>=0 && temp<data[j]){
                 data[j+1]=data[j];
                 j--;
                 
             }
-            System.out.print("第" + i + "次掃描:");
-            showdata();
-        }
+            data[j+1]=temp;
+            // System.out.print("第" + i + "次掃描:");
+           
+        } 
+        showdata();
     }
 }

@@ -50,10 +50,10 @@ public class quick_sort extends Object {
 
     void quick(int d[],int size,int lf,int rg){
         
-        int temp;
+        int i,j,temp;
         int lf_idx;
         int rg_idx;
-
+        int t;
         if(lf<rg){ //1:第一筆鍵值為d[lf]
 
             lf_idx=lf+1;
@@ -63,12 +63,12 @@ public class quick_sort extends Object {
             while(true){
 
                 System.out.print("[處理過程"+(process++)+"]=>");
-                for(int t=0;t<size;t++){
+                for(t=0;t<size;t++){
                     System.out.print("["+d[t]+"]");
                 }
                 System.out.println();
 
-                for(int i=lf+1;i<=rg;i++){ //2:由左向右找出一個最大鍵值大於d[lf]者
+                for(i=lf+1;i<=rg;i++){ //2:由左向右找出一個最大鍵值大於d[lf]者
                     if(d[i]>=d[lf]){
                         lf_idx=i;
                         break;
@@ -76,7 +76,7 @@ public class quick_sort extends Object {
                     lf_idx++;
                 }
 
-                for(int j=rg;j>=lf+1;j--){  //3:由右向左找出一個鍵值小於d[lf]者
+                for(j=rg;j>=lf+1;j--){  //3:由右向左找出一個鍵值小於d[lf]者
                     if(d[j]<=d[lf]){
                         rg_idx=j;
                         break;
