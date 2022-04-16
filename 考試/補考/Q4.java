@@ -29,6 +29,7 @@ public class Q4 {
                 people[i] = i + 1;
             }
             int count = 1;
+            System.out.print("出局人編號 :");
             while (num > 1) {
 
                 for (int i = 0; i < people.length; i++) {
@@ -49,7 +50,7 @@ public class Q4 {
             }
             for (int i = 0; i < people.length; i++) {
                 if (people[i] != 0) {
-                    System.out.print(people[i]);
+                    System.out.print("\n最後一位編號 :"+people[i]);
                 }
             }
         }
