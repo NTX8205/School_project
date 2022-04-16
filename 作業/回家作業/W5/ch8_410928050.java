@@ -39,6 +39,9 @@ public class ch8_410928050 {
     System.out.println("(5)100000");
     System.out.print("請輸入選項:");
     int choice2 = sc.nextInt();
+
+    sc.close();
+
     System.out.println();
     int num = 0;
     if (choice2 == 1) {

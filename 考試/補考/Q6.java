@@ -25,22 +25,19 @@ public class Q6 {
 
         sc.close();
 
-        int[] x_prime = new int[countprime(x)];
-        x_prime =prime(x,x_prime);
-        int[] y_prime = new int[countprime(y)];
-        y_prime = prime(y, y_prime);
-        int[] z_prime = new int[countprime(z)];
-        z_prime = prime(z, z_prime);
+        showPrime(x);
+        showPrime(y);
+        showPrime(z);
 
-        showPrime(x_prime,x);
-        showPrime(y_prime,y);
-        showPrime(z_prime,z);
-
-        gcd(x,y,z);
-        lcm(x,y,z);
+        // gcd(x,y,z);
+        // lcm(x,y,z);
     }
 
-    public static void showPrime(int[]n,int num) {
+    public static void showPrime(int num) {
+
+        int[] n = new int[countprime(num)];
+        n = prime(num, n);
+
         System.out.print(num+"的質因數分解為: ");
         for(int i=0;i<n.length;i++){
             System.out.print(n[i]);
@@ -89,10 +86,16 @@ public class Q6 {
     }
 
     public static void gcd(int x,int y,int z) {
-        
+        int[] x_prime = new int[countprime(x)];
+        x_prime = prime(x, x_prime);
+        int[] y_prime = new int[countprime(y)];
+        y_prime = prime(y, y_prime);
+        int[] z_prime = new int[countprime(z)];
+        z_prime = prime(z, z_prime);
+
     }
 
     public static void lcm(int x,int y,int z) {
-        
+
     }
 }

@@ -46,7 +46,6 @@ public class insert_sort extends Object{
             }
             data[j+1]=temp;
             // System.out.print("第" + i + "次掃描:");
-           
         } 
         showdata();
     }
