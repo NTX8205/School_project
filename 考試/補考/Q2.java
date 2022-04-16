@@ -23,7 +23,7 @@ public class Q2
         int n = sc.nextInt();
         sc.close();
 
-        System.out.print(n+"的質因數分解為 :");
+        System.out.print(n+"的質因數分解為: ");
 
         for(int i=2;n!=1;i++)
         {

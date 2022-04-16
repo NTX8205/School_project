@@ -18,7 +18,7 @@ public class W1_Q4N {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("輸入2數:");
+        System.out.print("輸入2數: ");
         int x = sc.nextInt();
         int y = sc.nextInt();
         sc.close();
@@ -30,8 +30,8 @@ public class W1_Q4N {
             b = a % b;
             a = gcd;
         }
-        System.out.println(x + "和" + y + "的最大公因數:" + b);
-        System.out.println(x + "和" + y + "的最小公倍數:" + x*y/b);
+        System.out.println(x + "和" + y + "的最大公因數: " + b);
+        System.out.println(x + "和" + y + "的最小公倍數: " + x*y/b);
 
     }
 }

@@ -21,7 +21,7 @@ public class Q5
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("輸入運算式 :");
+        System.out.print("輸入運算式: ");
         String str = sc.next();
         sc.close();
 
@@ -47,6 +47,8 @@ public class Q5
             }
         }
         
+        System.out.println("圓括弧的對應位置為: ");
+
         while(true)
         {   
             int start=0,end=0;

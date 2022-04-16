@@ -19,12 +19,12 @@ public class Q3
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("輸入 p 和 q (以空白隔開):");
+        System.out.print("輸入 p 和 q (以空白隔開): ");
         int p = sc.nextInt();
         int q = sc.nextInt();
         sc.close();
 
-        System.out.print(p+"與"+q+"之間的質數數量為 :"+countPrime(p, q));
+        System.out.print(p+"與"+q+"之間的質數數量為: "+countPrime(p, q));
 
         if(p>q)
         {
@@ -38,7 +38,7 @@ public class Q3
         prime = Prime(prime, p, q);
         int mid = (int)Math.floor((1+countPrime(p, q))/2);
 
-        System.out.println(" , 中間質數的位置為 :"+mid+" , 數字為 :"+prime[mid-1]);
+        System.out.println(" , 中間質數的位置為: "+mid+" , 數字為: "+prime[mid-1]);
 
     }
 
