@@ -140,7 +140,7 @@ public class ch8_410928050 {
     int temp = 0;
     int sdata[] = new int[data.length-1];
 
-    for (int i = 0; i < data.length-1; i++) {
+    for (int i = 0; i <sdata.length; i++) {
       sdata[i] = data[i];
     }
 
