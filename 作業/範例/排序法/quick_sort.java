@@ -7,13 +7,13 @@ public class quick_sort extends Object {
     
     int process = 0;
     int size;
-    int data[] = new int[100];
+    int data[] = new int[100001];
 
     public static void main(String[] args) {
         
         quick_sort sort = new quick_sort();
 
-        System.out.print("請輸入陣列大小(100以下) :");
+        System.out.print("請輸入陣列大小(100000以下) :");
         try {
             
             InputStreamReader isr = new InputStreamReader(System.in);
@@ -26,7 +26,7 @@ public class quick_sort extends Object {
         sort.inputarr();
         System.out.print("原始資料是:");
         sort.showdata();
-        sort.quick(sort.data,sort.size,0,sort.size-1);
+        sort.quick(sort.data,sort.size-1,0,sort.size-1);
         System.out.print("\n排序結果:");
         sort.showdata();
     }
@@ -35,14 +35,14 @@ public class quick_sort extends Object {
 
         //以亂數輸入
         Random rand = new Random();
-        for (int i=0;i<size;i++){
-            data[i]=(Math.abs(rand.nextInt(99)))+1;
+        for (int i=0;i<size-1;i++){
+            data[i]=(Math.abs(rand.nextInt(100000)))+1;
         }
     }
 
     void showdata(){
 
-        for (int i=0;i<size;i++){
+        for (int i=0;i<size-1;i++){
             System.out.print(data[i]+" ");
         }
         System.out.println();
@@ -62,11 +62,11 @@ public class quick_sort extends Object {
             //排序
             while(true){
 
-                System.out.print("[處理過程"+(process++)+"]=>");
-                for(t=0;t<size;t++){
-                    System.out.print("["+d[t]+"]");
-                }
-                System.out.println();
+                // System.out.print("[處理過程"+(process++)+"]=>");
+                // for(t=0;t<size;t++){
+                //     System.out.print("["+d[t]+"]");
+                // }
+                // System.out.println();
 
                 for(i=lf+1;i<=rg;i++){ //2:由左向右找出一個最大鍵值大於d[lf]者
                     if(d[i]>=d[lf]){
@@ -104,8 +104,8 @@ public class quick_sort extends Object {
                 d[rg_idx]=temp;
 
                 //5-2:並以rg_idx為基準點分成左右兩半
-                quick(d, size, lf, rg_idx-1);   //以遞迴方式分別為左右兩半進行排序
-                quick(d, size, rg_idx+1, rg);   //直至完成排序
+                quick(d, size-1, lf, rg_idx-1);   //以遞迴方式分別為左右兩半進行排序
+                quick(d, size-1, rg_idx+1, rg);   //直至完成排序
             }
 
         }

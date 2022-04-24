@@ -55,25 +55,41 @@ public class ch8_410928050 {
     } else if (choice2 == 5) {
       num = 100001;
     }
+
     int data[] = new int[num];
     data = randomnum(data);
 
     // 根據使用者輸入選項進行排序處理
     if (choice == 1) {
+      System.out.println("使用氣泡排序");
+      System.out.println("測試筆數:" + (num - 1) + "\n");
       bubble_sort(data);
-    } else if (choice == 2) {
+    } 
+    else if (choice == 2) {
+      System.out.println("使用選擇排序");
+      System.out.println("測試筆數:" + (num - 1) + "\n");
       selection_sort(data);
-    } else if (choice == 3) {
+    } 
+    else if (choice == 3) {
+      System.out.println("使用插入排序");
+      System.out.println("測試筆數:" + (num - 1) + "\n");
       insertion_sort(data);
-    } else if (choice == 4) {
+    } 
+    else if (choice == 4) {
+      System.out.println("使用快速排序");
+      System.out.println("測試筆數:" + (num - 1) + "\n");
       quick_sort(data, 0, num - 2, num - 1);
-    } else if (choice == 5) {
+    } 
+    else if (choice == 5) {
 
+      System.out.println("使用氣泡、選擇、插入、快速排序");
+      System.out.println("測試筆數:"+(num-1)+"\n");
       bubble_sort(data);
       selection_sort(data);
       insertion_sort(data);
       quick_sort(data, 0, num - 2, num - 1);
-    } else {
+    } 
+    else {
       System.out.printf("\n輸入的選項 %d 錯誤!\n", choice);
     }
   }
@@ -86,83 +102,121 @@ public class ch8_410928050 {
     return n;
   }
 
-  public static void selection_sort(int data[]) {
-    // System.out.printf("\nselection_sort() 施工中\n");
-    long startTime = System.currentTimeMillis();// 獲取開始時間
-    for (int i = 0; i < data.length - 2; i++) {
-      for (int j = i + 1; j < data.length-1; j++) {
-        if (data[i] > data[j]) {
-          int temp = data[i];
-          data[i] = data[j];
-          data[j] = temp;
-        }
-      }
+  public static void showdata(int[] d){
+    System.out.print("unsort :");
+    for(int i=0;i<d.length-1;i++){
+      System.out.print(d[i]+" ");
     }
-    long endTime = System.currentTimeMillis(); // 獲取結束時間
-    System.out.printf("selection_sort 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println();
   }
 
-  public static void insertion_sort(int data[]) {
-    long startTime = System.currentTimeMillis();// 獲取開始時間
-    long count = 0;
-    int i;
-    int j;
-    int temp;
-
-    for (i = 1; i < data.length-1; i++) {
-
-      temp = data[i];
-      j = i - 1;
-      while (j >= 0 && temp < data[j]) {
-        data[j + 1] = data[j];
-        count++;
-        j--;
-
-      }
-      data[j + 1] = temp;
-
+  public static void showsort(int[] d) {
+    System.out.print("sort :");
+    for (int i = 0; i < d.length - 1; i++) {
+      System.out.print(d[i] + " ");
     }
-
-    long endTime = System.currentTimeMillis(); // 獲取結束時間
-    
-    System.out.printf("insertion_sort 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
-    System.out.println("資料交換次數:" + count);
-  }
-
-  public static void quick_sort(int A[], int left, int right, int index) {
-    long startTime = System.currentTimeMillis();// 獲取開始時間
-    quick_sort_process(A, left, right, index);
-    long endTime = System.currentTimeMillis(); // 獲取結束時間
-    System.out.printf("quick_sort 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println();
   }
 
   public static void bubble_sort(int data[]) // 氣泡排序法進行由小到大排序
   {
     long startTime = System.currentTimeMillis(); // 獲取開始時間
-    long count = 0;
+    long countBubbleSort = 0;
     int temp = 0;
-    int sdata[] = new int[data.length-1];
+    int sdata[] = data.clone();
 
-    for (int i = 0; i <sdata.length; i++) {
-      sdata[i] = data[i];
-    }
-
-    for (int i = 0; i < data.length - 2; i++) {
-      for (int j = 0; j < data.length - i - 2; j++) {
-        if (data[j] > data[j + 1]) // 兩數交換
+    // showdata(sdata);
+    
+    for (int i = 0; i < sdata.length - 2; i++) {
+      for (int j = 0; j < sdata.length - i - 2; j++) {
+        if (sdata[j] > sdata[j + 1]) // 兩數交換
         {
           temp = sdata[j];
           sdata[j] = sdata[j + 1];
           sdata[j + 1] = temp;
-          count++;
+          countBubbleSort++;
         }
       }
 
     }
     long endTime = System.currentTimeMillis(); // 獲取結束時間
+
+    System.out.printf("氣泡排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println("資料交換次數:" + countBubbleSort);
+    System.out.println();
+    // showsort(sdata);
+  }
+
+  public static void selection_sort(int data[]) {
+    // System.out.printf("\nselection_sort() 施工中\n");
+
+    int[] d= data.clone();
+
+
+    // showdata(d);
+
+    long startTime = System.currentTimeMillis();// 獲取開始時間
+    for (int i = 0; i < d.length - 2; i++) {
+      for (int j = i + 1; j < d.length-1; j++) {
+        if (d[i] > d[j]) {
+          int temp = d[i];
+          d[i] = d[j];
+          d[j] = temp;
+        }
+      }
+    }
+    long endTime = System.currentTimeMillis(); // 獲取結束時間
+    System.out.printf("選擇排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println();
+    // showsort(d);
+  }
+
+  public static void insertion_sort(int data[]) {
+
     
-    System.out.printf("bubble sort 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
-    System.out.println("資料交換次數:" + count);
+    int[] d = data.clone();
+    // showdata(d);
+
+    long startTime = System.currentTimeMillis();// 獲取開始時間
+
+    long countInsertSort = 0;
+    int i;
+    int j;
+    int temp;
+
+    for (i = 1; i < d.length-1; i++) {
+
+      temp = d[i];
+      j = i - 1;
+      while (j >= 0 && temp < d[j]) {
+        d[j + 1] = d[j];
+        countInsertSort++;
+        j--;
+
+      }
+      d[j + 1] = temp;
+
+    }
+
+    long endTime = System.currentTimeMillis(); // 獲取結束時間
+    
+    System.out.printf("插入排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println("資料交換次數:" + countInsertSort);
+    System.out.println();
+    // showsort(d);
+  }
+
+  public static void quick_sort(int A[], int left, int right, int index) {
+    int[] d = A.clone();
+    
+    // showdata(d);
+
+    long startTime = System.currentTimeMillis();// 獲取開始時間
+    quick_sort_process(d, left, right, index);
+    long endTime = System.currentTimeMillis(); // 獲取結束時間
+    System.out.printf("快速排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
+    System.out.println();
+    // showsort(d);
   }
 
   public static void quick_sort_process(int A[], int left, int right, int index) {
