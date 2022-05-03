@@ -30,68 +30,75 @@ public class ch8_410928050 {
     choice = sc.nextInt();
     System.out.println();
 
-    // 隨機產生 num 個正整數
-    System.out.println("選擇測試筆數");
-    System.out.println("(1)10");
-    System.out.println("(2)100");
-    System.out.println("(3)1000");
-    System.out.println("(4)10000");
-    System.out.println("(5)100000");
-    System.out.print("請輸入選項:");
-    int choice2 = sc.nextInt();
+    if(choice>=1 && choice <=5) {
 
-    sc.close();
+      // 隨機產生 num 個正整數
+      System.out.println("選擇測試筆數");
+      System.out.println("(1)10");
+      System.out.println("(2)100");
+      System.out.println("(3)1000");
+      System.out.println("(4)10000");
+      System.out.println("(5)100000");
+      System.out.print("請輸入選項:");
+      int choice2 = sc.nextInt();
 
-    System.out.println();
-    int num = 0;
-    if (choice2 == 1) {
-      num = 11;
-    } else if (choice2 == 2) {
-      num = 101;
-    } else if (choice2 == 3) {
-      num = 1001;
-    } else if (choice2 == 4) {
-      num = 10001;
-    } else if (choice2 == 5) {
-      num = 100001;
-    }
+      sc.close();
+      System.out.println();
+      if(choice2>=1 && choice2<=5){
 
-    int data[] = new int[num];
-    data = randomnum(data);
+        int num = 0;
 
-    // 根據使用者輸入選項進行排序處理
-    if (choice == 1) {
-      System.out.println("使用氣泡排序");
-      System.out.println("測試筆數:" + (num - 1) + "\n");
-      bubble_sort(data);
-    } 
-    else if (choice == 2) {
-      System.out.println("使用選擇排序");
-      System.out.println("測試筆數:" + (num - 1) + "\n");
-      selection_sort(data);
-    } 
-    else if (choice == 3) {
-      System.out.println("使用插入排序");
-      System.out.println("測試筆數:" + (num - 1) + "\n");
-      insertion_sort(data);
-    } 
-    else if (choice == 4) {
-      System.out.println("使用快速排序");
-      System.out.println("測試筆數:" + (num - 1) + "\n");
-      quick_sort(data, 0, num - 2, num - 1);
-    } 
-    else if (choice == 5) {
+        if (choice2 == 1) {
+          num = 11;
+        } else if (choice2 == 2) {
+          num = 101;
+        } else if (choice2 == 3) {
+          num = 1001;
+        } else if (choice2 == 4) {
+          num = 10001;
+        } else if (choice2 == 5) {
+          num = 100001;
+        } 
 
-      System.out.println("使用氣泡、選擇、插入、快速排序");
-      System.out.println("測試筆數:"+(num-1)+"\n");
-      bubble_sort(data);
-      selection_sort(data);
-      insertion_sort(data);
-      quick_sort(data, 0, num - 2, num - 1);
-    } 
-    else {
+        int data[] = new int[num];
+        data = randomnum(data);
+
+        // 根據使用者輸入選項進行排序處理
+        if (choice == 1) {
+          System.out.println("使用氣泡排序");
+          System.out.println("測試筆數:" + (num - 1) + "\n");
+          bubble_sort(data);
+        } else if (choice == 2) {
+          System.out.println("使用選擇排序");
+          System.out.println("測試筆數:" + (num - 1) + "\n");
+          selection_sort(data);
+        } else if (choice == 3) {
+          System.out.println("使用插入排序");
+          System.out.println("測試筆數:" + (num - 1) + "\n");
+          insertion_sort(data);
+        } else if (choice == 4) {
+          System.out.println("使用快速排序");
+          System.out.println("測試筆數:" + (num - 1) + "\n");
+          quick_sort(data, 0, num - 2, num - 1);
+        } else if (choice == 5) {
+
+          System.out.println("使用氣泡、選擇、插入、快速排序");
+          System.out.println("測試筆數:" + (num - 1) + "\n");
+          bubble_sort(data);
+          selection_sort(data);
+          insertion_sort(data);
+          quick_sort(data, 0, num - 2, num - 1);
+        } 
+      } else {
+          System.out.println("輸入選項 " + choice2 + " 錯誤");
+      }
+      
+    } else {
       System.out.printf("\n輸入的選項 %d 錯誤!\n", choice);
     }
+
+     
+    
   }
 
   public static int[] randomnum(int n[]) // 產生n個1~100000的亂數值的副程式
@@ -103,9 +110,16 @@ public class ch8_410928050 {
   }
 
   public static void showdata(int[] d){
-    System.out.print("unsort :");
     for(int i=0;i<d.length-1;i++){
       System.out.print(d[i]+" ");
+    }
+    System.out.println();
+  }
+
+  public static void showunsort(int[] d) {
+    System.out.print("unsort :");
+    for (int i = 0; i < d.length - 1; i++) {
+      System.out.print(d[i] + " ");
     }
     System.out.println();
   }
@@ -125,7 +139,7 @@ public class ch8_410928050 {
     int temp = 0;
     int sdata[] = data.clone();
 
-    // showdata(sdata);
+    // showunsort(sdata);
     
     for (int i = 0; i < sdata.length - 2; i++) {
       for (int j = 0; j < sdata.length - i - 2; j++) {
@@ -138,13 +152,17 @@ public class ch8_410928050 {
         }
       }
 
+      // System.out.println("資料交換次數:" + countBubbleSort);
+      // System.out.print("第"+(i+1)+"次");
+      // showdata(sdata);
+
     }
     long endTime = System.currentTimeMillis(); // 獲取結束時間
 
     System.out.printf("氣泡排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
     System.out.println("資料交換次數:" + countBubbleSort);
-    System.out.println();
     // showsort(sdata);
+    System.out.println();
   }
 
   public static void selection_sort(int data[]) {
@@ -153,7 +171,7 @@ public class ch8_410928050 {
     int[] d= data.clone();
 
 
-    // showdata(d);
+    // showunsort(d);
 
     long startTime = System.currentTimeMillis();// 獲取開始時間
     for (int i = 0; i < d.length - 2; i++) {
@@ -175,7 +193,7 @@ public class ch8_410928050 {
 
     
     int[] d = data.clone();
-    // showdata(d);
+    // showunsort(d);
 
     long startTime = System.currentTimeMillis();// 獲取開始時間
 
@@ -195,6 +213,10 @@ public class ch8_410928050 {
 
       }
       d[j + 1] = temp;
+      
+      // System.out.println("資料交換次數:" + countInsertSort);
+      // System.out.print("第" + (i) + "次");
+      // showdata(d);
 
     }
 
@@ -202,14 +224,14 @@ public class ch8_410928050 {
     
     System.out.printf("插入排序 程式執行時間=%.3fs\n", (double) (endTime - startTime) / 1000);
     System.out.println("資料交換次數:" + countInsertSort);
-    System.out.println();
     // showsort(d);
+    System.out.println();
   }
 
   public static void quick_sort(int A[], int left, int right, int index) {
     int[] d = A.clone();
     
-    // showdata(d);
+    // showunsort(d);
 
     long startTime = System.currentTimeMillis();// 獲取開始時間
     quick_sort_process(d, left, right, index);
