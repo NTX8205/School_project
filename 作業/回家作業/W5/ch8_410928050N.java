@@ -10,7 +10,7 @@ package 作業.回家作業.W5;
 
 import java.util.*;
 
-public class ch8_410928050 {
+public class ch8_410928050N {
   static int process = 0;
 
   public static void main(String[] args) {
