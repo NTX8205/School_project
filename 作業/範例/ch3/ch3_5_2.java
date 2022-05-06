@@ -1,20 +1,27 @@
 package 作業.範例.ch3;
 public class ch3_5_2
 {
+  static int count=0;
   public static void main(String[] args) 
   { //宣告及設定初值
-      int N = 6,Sum;
+      int n = 6,Sum;
     //處理
-      Sum = Total(N);      //呼叫自定函數
+      Sum = Fib(n);      //呼叫自定函數
     //輸出
+      System.out.println("Fib函式被呼叫了" + count + "次");
       System.out.println("Sum=" + Sum);  
    }
 
-  static int Total(int N)  //函數名稱
+  static int Fib(int n)  //函數名稱
    {
-    if (N <= 2)            //遞迴函數的終值
+    count++;
+    if (n <= 2)            //遞迴函數的終值
       return 1;
-    else
-      return Total(N-2) + Total(N - 1); //函數自己又可以呼叫自己
+    else{
+      System.out.println("Fib(" + n + ")呼叫Fib(" + (n - 1) + ")呼叫Fib(" + (n - 2) + ")");
+      return Fib(n-1) + Fib(n - 2); //函數自己又可以呼叫自己
+
+    }
+     
    }
 }
