@@ -1,7 +1,5 @@
 package 作業.範例.排序法;
 
-import java.io.*;
-import java.security.*;
 
 public class insert_sort extends Object{
     

@@ -1,6 +1,6 @@
 package 作業.範例.ch8;
 
-import java.io.*;
+
 
 public class ch8_5 {
   public static int MAX = 100001;
@@ -32,7 +32,7 @@ public class ch8_5 {
 
   // 快速排序法之副程式
   public static void QuickSort(int A[], int left, int right, int index) {
-    int lower, upper, t, k, key, temp, done;
+    int lower, upper, key, temp;
     lower = left;
     upper = right + 1;
     key = A[left];

@@ -10,7 +10,7 @@ public class stackmenu {
         Scanner sc =new Scanner(System.in);
         System.out.println("歡迎使用 Stack Menu!");
 
-        Stack stack = new Stack<String>();
+        Stack<String> stack = new Stack<String>();
 
         while (true) {
             System.out.println("請輸入你將要使用的操作");
@@ -60,6 +60,7 @@ public class stackmenu {
 
             }
         }
+        sc.close();
     }
 
 }

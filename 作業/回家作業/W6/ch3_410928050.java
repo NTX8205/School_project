@@ -85,6 +85,7 @@ public class ch3_410928050 {
                     System.out.println("選項輸入錯誤，請重新輸入");
                     break;
             }
+            sc.close();
         }
     }
 

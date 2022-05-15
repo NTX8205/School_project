@@ -53,7 +53,6 @@ public class quick_sort extends Object {
         int i,j,temp;
         int lf_idx;
         int rg_idx;
-        int t;
         if(lf<rg){ //1:第一筆鍵值為d[lf]
 
             lf_idx=lf+1;

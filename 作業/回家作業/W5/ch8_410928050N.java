@@ -97,7 +97,7 @@ public class ch8_410928050N {
       System.out.printf("\n輸入的選項 %d 錯誤!\n", choice);
     }
 
-     
+    sc.close();
     
   }
 
@@ -242,7 +242,7 @@ public class ch8_410928050N {
   }
 
   public static void quick_sort_process(int A[], int left, int right, int index) {
-    int lower, upper, t, k, key, temp, done;
+    int lower, upper, key, temp;
     lower = left;
     upper = right + 1;
     key = A[left];

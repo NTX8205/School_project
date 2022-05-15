@@ -45,5 +45,7 @@ public class menu_repeated1 {
                 System.out.printf("\n你的輸入值 %d 不在範圍中", choice);
             }
         } while (choice != -1);
+        sc.close();
+
     }
 }

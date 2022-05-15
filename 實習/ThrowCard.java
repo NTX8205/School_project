@@ -16,6 +16,7 @@ public class ThrowCard {
             Deck.DiscardTheCard();
             Deck.PutTheCardOnTheBack();
         }
+        sc.close();
     }
 }
 

@@ -23,6 +23,7 @@ public class menu_01 {
         Scanner sc = new Scanner(System.in);
 
         int choice = sc.nextInt();
+        sc.close();
 
         if (choice == 1) {
             System.out.printf("\n執行 選項一 對應的函式");
