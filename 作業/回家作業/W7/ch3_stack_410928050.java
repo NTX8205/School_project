@@ -9,7 +9,6 @@ public class ch3_stack_410928050 {
     public static int MaxNum = 10; // 定義堆疊大小
     public static char Stack[] = new char[MaxNum]; // 以陣列Stack當作堆疊
     public static int Top = -1; // Top紀錄目前堆疊頂端的索引值，初始值設為-1表示堆疊為空
-
     public static void main(String[] args) throws IOException {
         // 輸入
         int op = 0;
