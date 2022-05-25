@@ -5,7 +5,7 @@ package 作業.回家作業.W8;
  * 班級:資管二B
  * 姓名:許哲睿
  * 學號:410928050
- * 日期:2022.05.18
+ * 日期:2022.05.24
  */
 import java.io.*;
 
@@ -14,13 +14,14 @@ public class ch4_Ｃqueue２ {
     public static char Queue[] = new char[NUM]; // 宣告及建立佇列
     public static int Rear; // 宣告佇列的尾端
     public static int Front; // 宣告佇列的前端
-
+    public static int Tag =0;
     public static void main(String[] args) throws IOException {
         // 輸入
         int op = 0;
         Rear = -1;
         Front = -1;
-        System.out.println("實作 ch4-2(佇列), 空間不能再利用的版本");
+        
+        System.out.println("實作 ch4-2(佇列), Circular Queue 使用 N格空間 (with Tag)");
         while (op != -1) {
             BufferedReader indata;
             indata = new BufferedReader(new InputStreamReader(System.in));
@@ -72,38 +73,45 @@ public class ch4_Ｃqueue２ {
     public static void Enqueue(char item) // Enqueue副程式
     {
 
-        if (Rear == NUM - 1) {
+        if (((Rear + 1) % NUM) == Front || Rear == 10 && Front <= 0 && Tag == 1) {
             System.out.println("佇列是滿的!\n");
             return;
-        } else
-            Queue[++Rear] = item;
-
+        } else {
+            Rear = (Rear + 1) % NUM;
+            Queue[Rear] = item;
+            if (Rear == Front) {
+                Tag = 1;
+            }
+        }
     }
 
     public static char Dequeue() // Dequeue副程式
     {
-        if (Front == Rear) {
+
+        if (Front == Rear && Tag ==0) {
             System.out.println("\n佇列是空的!\n");
             return 'x';
         } else
-            return (char) Queue[++Front];
+            Front = (Front + 1) % NUM;
+            if (Rear == Front) {
+                Tag = 0;
+            }
+        return (char) Queue[Front];
     }
 
-    public static void IsFull()
-    {
-        if (Rear == NUM - 1 && Front == -1) {
+    public static void IsFull() {
+        if (((Rear + 1) % NUM) == Front || Rear == 10 && Front <= 0 && Tag == 1) {
             System.out.println("\n佇列是滿的!\n");
-            return ;
+            return;
         } else {
             System.out.println("\n佇列尚未滿\n");
         }
     }
 
-    public static void IsEmpty()
-    {
-        if (Front == Rear) {
+    public static void IsEmpty() {
+        if (Front == Rear && Tag == 0) {
             System.out.println("\n佇列是空的!\n");
-            return ;
+            return;
         } else {
             System.out.println("\n佇列不為空\n");
         }
@@ -113,9 +121,16 @@ public class ch4_Ｃqueue２ {
     // 輸出順序:從頭到尾
     public static void PrintQueue() // 列印目前佇列的內容之副程式
     {
-        int i;
-        for (i = Front +1; i <= Rear; i++)
+        int i = Front;
+        if (i == -1) {
+            i = 0;
+        }
+        for (; i != Rear; i++) {
+            if (i == 10) {
+                i = 0;
+            }
             System.out.print((char) Queue[i] + " \t");
+        }
         System.out.println();
     }
 }

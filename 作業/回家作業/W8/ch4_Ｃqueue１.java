@@ -5,7 +5,7 @@ package 作業.回家作業.W8;
  * 班級:資管二B
  * 姓名:許哲睿
  * 學號:410928050
- * 日期:2022.05.18
+ * 日期:2022.05.24
  */
 import java.io.*;
 
@@ -20,6 +20,7 @@ public class ch4_Ｃqueue１ {
         int op = 0;
         Rear = -1;
         Front = -1;
+        System.out.println("實作 ch4-2(佇列),Circular Queue 使用 N-1格空間");
         while (op != -1) {
             BufferedReader indata;
             indata = new BufferedReader(new InputStreamReader(System.in));
@@ -45,7 +46,7 @@ public class ch4_Ｃqueue１ {
                 case 2:
                     item = Dequeue(); // 呼叫Dequeue副程式
                     if (item != -1)
-                        System.out.println(item + "是從佇列刪除的資料");
+                        System.out.println(item + "是從佇列刪除的資料\n");
                     break;
                 case 3: // 呼叫自訂函數 ---------> 記得修改
                     IsFull();
@@ -70,37 +71,42 @@ public class ch4_Ｃqueue１ {
 
     public static void Enqueue(char item) // Enqueue副程式
     {
-
-        if (Rear == NUM - 1) {
+        
+        if (((Rear + 1) % NUM )== Front || Rear == 9 && Front <= 0) {
             System.out.println("佇列是滿的!\n");
             return;
-        } else
-            Queue[++Rear] = item;
-
+        } else {
+            Rear = (Rear + 1) % NUM;
+            Queue[Rear] = item;
+        }
     }
 
     public static char Dequeue() // Dequeue副程式
     {
+        
         if (Front == Rear) {
             System.out.println("\n佇列是空的!\n");
             return 'x';
         } else
-            return (char) Queue[++Front];
+            Front = (Front + 1) % NUM;
+        return (char) Queue[Front];
     }
 
-    public static void IsFull()
-    {
-        if (Rear == NUM - 1) {
+    public static void IsFull() {
+        if (((Rear + 1) % NUM) == Front || Rear == 9 && Front <= 0) {
             System.out.println("\n佇列是滿的!\n");
-            return ;
+            return;
+        } else {
+            System.out.println("\n佇列尚未滿\n");
         }
     }
 
-    public static void IsEmpty()
-    {
+    public static void IsEmpty() {
         if (Front == Rear) {
             System.out.println("\n佇列是空的!\n");
-            return ;
+            return;
+        } else {
+            System.out.println("\n佇列不為空\n");
         }
     }
 
@@ -108,9 +114,16 @@ public class ch4_Ｃqueue１ {
     // 輸出順序:從頭到尾
     public static void PrintQueue() // 列印目前佇列的內容之副程式
     {
-        int i;
-        for (i = Front +1; i <= Rear; i++)
+        int i= Front;
+        if(i == -1){
+            i=0;
+        }
+        for (;i != Rear; i++){
+            if(i == 10){
+                i=0;
+            }
             System.out.print((char) Queue[i] + " \t");
+        }
         System.out.println();
     }
 }
