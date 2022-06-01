@@ -9,7 +9,7 @@ public class ch5_4_2
   {
 	int start_node=1,end_node=6;
 	
-	String Sum_Node[]={"head","10","20","30","40","50","null"};
+	String Sum_Node[]={"head","10","50","30","40","20","null"};
 	
 	LinkedList LL=new LinkedList();  //建立一個空的鏈結串列
 	System.out.println("建立一個鏈結串列：");
