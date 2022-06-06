@@ -32,12 +32,12 @@ public class BinaryTreeNodeAnalysis {
    // 第二組測試的資料
    static int h = 4;
    static int n = 16;
-   static int BinTree[] = { 0, 5, 4, 2, 3, 15, 8, 9, 6, 7, 0, 0, 0, 0, 0, 11 };
+   static int BinTree[] = { 0, 5, 4, 2, 3, 15, 8, 9, 6, 7, 0, 4, 0, 9, 0, 11 };
    //
-   // 5
-   // 4 2
-   // 3 15 8 9
-   // 6 7 x x x x x 11
+   //              5
+   //         4        2
+   //       3   15   8   9
+   //      6 7 x  4 x 9 x 11
    //
 
    public static void main(String[] args) throws IOException {
