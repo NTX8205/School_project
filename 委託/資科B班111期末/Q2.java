@@ -43,5 +43,6 @@ public class Q2 {
         //將最後留下的號碼利用排序放在最後在印出。
         Arrays.sort(people);
         System.out.println("最後留下來的號碼 :" + people[people.length-1]);
+        sc.close();
     }
 }
