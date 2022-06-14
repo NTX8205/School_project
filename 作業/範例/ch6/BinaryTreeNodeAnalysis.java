@@ -32,7 +32,7 @@ public class BinaryTreeNodeAnalysis {
    // 第二組測試的資料
    static int h = 4;
    static int n = 16;
-   static int BinTree[] = { 0, 5, 4, 2, 3, 15, 8, 9, 6, 7, 0, 4, 0, 9, 0, 11 };
+   static int BinTree[] = { 1, 5, 4, 2, 3, 15, 8, 9, 6, 7, 3, 4, 4, 9, 7, 11 };
    //
    //              5
    //         4        2
