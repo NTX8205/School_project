@@ -17,9 +17,9 @@ public class ch6_BT5 {
         Scanner sc = new Scanner(System.in);
         System.out.print("輸入二元樹高度h(h至少為1) :");
         int h = sc.nextInt();
-        System.out.print("輸入節點數n(h<=n<=2^h-1) :");
+        System.out.print("輸入資料筆數n(h<=n<=2^h) :");
         int n = sc.nextInt();
-        int binaryTree[] = new int[n+1];
+        int binaryTree[] = new int[n];
         binaryTree = data(binaryTree);
         while (true) {
             System.out.println("輸入一整數選擇下列選項 :");
@@ -28,7 +28,8 @@ public class ch6_BT5 {
             System.out.println("(3) 二元樹拜訪(前序式)");
             System.out.println("(4) 二元樹拜訪(中序式)");
             System.out.println("(5) 二元樹拜訪(後序式)");
-            System.out.println("(6) 重新產生新的二元樹");
+            System.out.println("(6) 重新產生二元樹");
+            System.out.println("(7) 產生新的二元樹");
             System.out.println("(-1)結束程式");
             int choose = sc.nextInt();
 
@@ -42,7 +43,7 @@ public class ch6_BT5 {
                     System.out.println("(1)二元樹陣列表示法驗證正確性");
                     System.out.printf("\n判斷以陣列表示法儲存高度為 %d 的二元樹是不是正確的二元樹", h);
                     System.out.printf("\n假設節點的數值為正整數，空的節點的數值為0");
-                    System.out.printf("\n高度是 %d 的二元樹，若為full binary tree會有 %3d 節點,再加上陣列保留編號0的位置，共計 %3d 筆資料", h, n - 1,n);
+                    System.out.printf("\n高度是 %d 的二元樹，若為full binary tree會有 %3d 節點,再加上陣列保留編號0的位置，共計 %3d 筆資料", h, n -1,n);
                     System.out.printf("\n\n這棵二元樹的陣列表示法（不包含索引值為0）：");
                     for (int i = 1; i < n; i++) {
                         System.out.printf(" %3d", binaryTree[i]);
@@ -159,10 +160,20 @@ public class ch6_BT5 {
                     // 進行 Postorder Tree Traversal 的處理
 
                     PostorderTraversal(1,n,binaryTree);
+                    System.out.println();
                     break;
                 case 6:
                     binaryTree = data(binaryTree);
                     System.out.println("已重新生成二元樹\n");
+                    break;
+                case 7:
+                    System.out.print("輸入二元樹高度h(h至少為1) :");
+                    h = sc.nextInt();
+                    System.out.print("輸入資料筆數n(h<=n<=2^h) :");
+                    n = sc.nextInt();
+                    binaryTree = new int[n];
+                    binaryTree = data(binaryTree);
+                    System.out.println("已產生新的二元樹\n");
                     break;
                 default :
                     System.out.println("無此選項，請重新輸入\n");
