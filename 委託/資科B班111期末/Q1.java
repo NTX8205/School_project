@@ -12,7 +12,9 @@ import java.util.*;
 public class Q1 {
     public static void main(String[] args) {
         //讀取檔案(路徑請自行更改)
-        try (Scanner input = new Scanner(Paths.get("C:\\Users\\User\\OneDrive\\文件\\GitHub\\School_project\\委託\\資科B班111期末\\article.txt"))){
+        //相對路徑 : School_project\\委託\\資科B班111期末\\article.txt
+        //絕對路徑 : C:\\Users\\User\\OneDrive\\文件\\GitHub\\School_project\\委託\\資科B班111期末\\article.txt
+        try (Scanner input = new Scanner(Paths.get("School_project\\委託\\資科B班111期末\\article.txt"))){
             int count_e = 0;
             int count_to = 0;
             while(input.hasNext()){
